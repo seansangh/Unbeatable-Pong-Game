@@ -1,0 +1,152 @@
+#body{
+  height: 100vh;
+  background: radial-gradient(#004080, #001a33);
+  padding: 0px;
+  position: absolute;
+  width: 100vw;
+}
+
+.lP{
+  height: 125px;
+  width: 15px;
+  background: radial-gradient(white,#e6e6e6);
+  position: absolute;
+}
+
+.rP{
+  height: 125px;
+  width: 15px;
+  background: radial-gradient(red,maroon);
+  position: absolute;
+  right: 0%;
+  dtransform: translate(0,45vh);
+  
+}
+
+.mP{
+  height: 100vh;
+  width: 0px;
+  background: none;
+  border-left:2px dashed white;
+  border-right:2px dashed black;
+  position: absolute;
+  right: 50%;
+  opacity: 0.5;
+}
+
+#s1{
+  position: absolute;
+  left: 22%;
+  top: 5%;
+  font-size: 150px;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 3px 3px 0 black;
+}
+
+#s2{
+  position: absolute;
+  left: 72%;
+  top: 5%;
+  font-size: 150px;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 3px 3px 0 black;
+}
+
+#s21{
+  position: absolute;
+  left: 72%;
+  top: 5%;
+  font-size: 20px;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 2px 2px 0 black;
+}
+
+#s11{
+  position: absolute;
+  left: 22.5%;
+  top: 5%;
+  font-size: 20px;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 2px 2px 0 black;
+}
+
+.start, .start2{
+  background: radial-gradient(#004080, #001a33);  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  width: 100vw;
+}
+
+#b1{
+  color: white;
+  text-shadow: 2px 2px 0 black;
+  font-size: 40px;
+  text-align: center;
+  opacity: 0.7;
+  padding-top: 5%;
+}
+
+#b2{
+  color: white;
+  text-shadow: 2px 2px 0 black;
+  font-size: 35px;
+  text-align: center;
+  opacity: 0.7;
+  padding-top: 15%;
+}
+
+#wz{
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  text-align:center;
+}
+
+.start:hover, .start2:hover{
+  cursor: pointer; 
+}
+
+.start2{
+  display: none;
+}
+
+body{
+  overflow: hidden;
+}
+
+.llP{
+  height: 10px;
+  width: 15px;
+  background: #80bfff;
+  position: absolute;
+  opacity: 0.5;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.llP2{
+  height: 10px;
+  width: 15px;
+  background: #80bfff;
+  position: absolute;
+  opacity: 0.5;
+  border-radius: 0px 0px 0px 0px;
+  opacity:0;
+}
+
+.ball{
+  height: 25px;
+  width: 25px;
+  background: white;
+  position: absolute;
+  opacity: 0.5;
+  border-radius: 15px;
+  opacity: 0.7; 
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
