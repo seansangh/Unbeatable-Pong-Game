@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js"></script>   
+   <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <link rel="stylesheet" href="/style.css">
+   <script>
+    $(document).ready(function(){
+      
+      $('body').mousemove(function(event){
+   var p=$('.lP').position();
+  //alert(p.top +" "+ event.pageY)
+  if((p.top+63)>event.pageY){
+   $('.llP2').css("opacity",0.5)  
+   $('.lP').css("background","white");
+   $('.llP2').css("transform", 
+"translate(0px,"+(event.pageY+63)+"px)");
+  setTimeout(function(){
+    $('.llP2').css("opacity",0)
+    
+  },100) 
+ }
+ if((p.top+63)<event.pageY){
+  $('.llP').css("opacity",0.5) 
+  $('.lP').css("background","white");
+  $('.llP').css("transform", 
+"translate(0px,"+(event.pageY-73)+"px)");
+  setTimeout(function(){
+    $('.llP').css("opacity",0)
+    
+  },100) 
+ }
+  //$('.lP').fadeOut("200");
+  $('.lP').css("transform", 
+"translate(0px,"+(event.pageY-63)+"px)");  
+      })
+
+
+ // alert($('.ball').position().top)
+ // alert($(window).height())
+ // alert($(window).width())/2
+ //alert($('.lP').position().top)    
+//112.5, 569.5
+// 250, 1164      
+    })
+   </script>
+   <script type="text/babel">
+      class MyC extends React.Component{
+   constructor(props){
+     super(props);
+     this.state={
+       one:0, two:0, play:0, last:"c"
+     }
+     this.handleChange=this.handleChange.bind(this);
+     this.myF=this.myF.bind(this);
+     this.funct=this.funct.bind(this);          
+   }
+   
+   
+   handleChange(event){
+      this.setState({play:1})
+     $('.start').fadeOut('slow',function(){  
+     })       
+    }
+   
+   handleChange2(event){
+     $('.start2').fadeOut('slow',function(){  
+     }) 
+     $('.start').fadeIn('slow',function(){  
+     })      
+    }   
+   
+   funct(event){
+    return alert('moo....')
+   }
+   
+    myF(event){
+     // alert('s')
+        var yB= $('.ball').position();
+      //alert("left:"+yB.left+"; top:"+yB.top)
+        var y=1; var x=1; var d= Math.random()*2-1;
+        var w= 25; var x1=$('.ball').position().left; 
+        var y1=$('.ball').position().top;
+       
+      var xD= "+"; 
+      if(Math.random()*1>0.5){var yD="+"}
+      else{var yD="-"};
+      var y0= -12.5; var h=125;
+      var success=""; var two=0;
+      
+      //function func(){ return this.setState({one:3}) }
+  
+      
+      
+    var m= setInterval(function(){
+         if(parseInt(document.getElementById('s1').textContent)==3 || parseInt(document.getElementById('s2').textContent)==3){
+            clearInterval(m)
+       $('.start2').fadeIn('slow',function(){  
+     }) 
+       document.getElementById('s1').textContent=0;
+       document.getElementById('s2').textContent=0;    
+            
+         }   
+         else{
+         if((x+w+15)==$(window).width()/2 || (x-w+15)== -$(window).width()/2){
+
+           if((x+w+15)==$(window).width()/2){
+             if(y0 >= $('.rP').position().top-$(window).height()/2 && y0 <= $('.rP').position().top-h+$(window).height()/2){
+
+             d= Math.random()*10-5;
+             x=x-1;
+             xD="-";
+             $('.ball').css("transform", 
+"translate("+x+"px,"+ y0 +"px)");               
+             }
+                  
+             else{
+               document.getElementById('s1').textContent= 1+parseInt(document.getElementById('s1').textContent);
+               //clearInterval(m)
+                $('.ball').css("transform", 
+"translate("+-x-w+"px,"+ 0 +"px)");
+               
+             d= Math.random()*10-5;
+             x=1;
+             xD="+";
+             y0=-12.5;
+             }
+             
+             
+           }
+           else if((x-w+15)== -$(window).width()/2){
+          // alert("1. "+y0 + " "+ $('.lP').position().top +" "+-$(window).height()/2+ " /r"+ " 2. "+y0 + " "+ $('.lP').position().top +" "+h+" "+$(window).height()/2+ " 3. "+ JSON.stringify($('.ball').position())+ "4. "+ JSON.stringify(document.getElementById('bB1').getBoundingClientRect()) + "5. "+ JSON.stringify(document.getElementById('llpp').getBoundingClientRect()))
+          //alert(document.getElementById('llpp').getBoundingClientRect().top+" "+(0.5*(document.getElementById('bB1').getBoundingClientRect().top +document.getElementById('bB1').getBoundingClientRect().bottom)))
+             if(document.getElementById('llpp').getBoundingClientRect().top<(0.5*(document.getElementById('bB1').getBoundingClientRect().top +document.getElementById('bB1').getBoundingClientRect().bottom)) && document.getElementById('llpp').getBoundingClientRect().bottom>(0.5*(document.getElementById('bB1').getBoundingClientRect().top +document.getElementById('bB1').getBoundingClientRect().bottom))){
+          //   if(y0 >= $('.lP').position().top-$(window).height()/2 && y0 <= $('.lP').position().top-h+$(window).height()/2){
+             
+             d= Math.random()*10-5;
+             x=x+6
+             xD="+";
+             $('.ball').css("transform", 
+"translate("+x+"px,"+ y0 +"px)"); 
+            } 
+            else{
+             //  this.setState({one: 2})
+             //  this.func(event);
+               document.getElementById('s2').textContent= 1+parseInt(document.getElementById('s2').textContent);
+               //clearInterval(m)
+                $('.ball').css("transform", 
+"translate("+-x-w+"px,"+ 0 +"px)");
+               
+             d= Math.random()*10-5;
+             x=5;
+             xD="-";
+             y0=-12.5;
+             } 
+             
+           }
+         }
+      
+         else if((y0+w)>$(window).height()/2 || (y0)<-$(window).height()/2 || (x+w)== $(window).width()/2 || (x-w)== -$(window).width()/2){
+         //alert('moo')
+            if((y0+w)>$(window).height()/2){
+              y0= $(window).height()/2-w;
+              $('.ball').css("transform", 
+"translate("+x+"px,"+ y0 +"px)");
+                         
+            }
+            else if((y0)<-$(window).height()/2){
+              y0= -$(window).height()/2;
+              $('.ball').css("transform", 
+"translate("+x+"px,"+ y0-w +"px)");
+            }
+            
+            
+           
+           if(d>=0){d=parseFloat("-"+d);}
+           else{d=Math.abs(d);}
+           
+        //   clearInterval(m);
+           
+          if(xD=="-"){
+            x--
+          }else{
+            x++;
+          }
+          if(yD=="-"){
+            y--
+          }else{
+            y++;
+          }           
+ 
+         }
+      
+         else{ 
+          $('.ball').css("transform", 
+"translate("+x+"px,"+ y0 +"px)");
+    $('.rP').css("transform", 
+"translate("+0+"px,"+ ($('.ball').position().top -50) +"px)");  
+           
+          y0+=d;
+      
+          if(xD=="-"){
+            x--
+          }else{
+            x++;
+          }
+          if(yD=="-"){
+            y--
+          }else{
+            y++;
+          }            
+         }
+      
+         }
+        },.05);
+
+     }
+   
+   render(){
+     return(
+     <div>
+     <div className="start" onClick={(event)=>{this.handleChange(); this.myF()}}>
+       <div id="wz">
+        <p id="b1">Unbeatable Pong Game</p>
+        <p id="b2">click to continue <i className="fa fa-play-circle-o"></i></p>
+        
+       </div>
+     </div>
+     <div className="start2" onClick={(event)=>{this.handleChange2()}}>
+       <div id="wz">
+        <p id="b1">Computer Wins......</p>
+        <p id="b2">Main Menu <i className="fa fa-play-circle-o"></i></p>
+        
+       </div>
+     </div>    
+     <div className="llP">
+      
+     </div>
+     <div className="llP2">
+      
+     </div>           
+     <div className="lP" id="llpp">
+      
+     </div>
+     <div className="rP">
+      
+     </div>
+     <div className="mP">
+      
+     </div>
+     <div className="ball" id="bB1">
+      
+     </div>         
+       <div id="s1">
+         0
+       </div>
+       <div id="s11">
+         Player 1
+       </div> 
+       <div id="s2">
+         0
+       </div>       
+       <div id="s21">
+         Computer
+       </div>        
+     </div>
+     )
+   }
+   
+   
+ }
+
+
+ReactDOM.render(<MyC />, document.getElementById('content'))
+   </script>
+ </head>
+ <body>
+   <div id="body">
+     
+     <div id="content">
+     
+       
+     </div>
+   </div>
+
+
+
+ </body>
+</html>
